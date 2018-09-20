@@ -29,7 +29,7 @@ export class ApiService {
         endDate: new Date(formVal.edate).toISOString(),
         priority: formVal.priority
     };
-    return this.http.post(this.baseUrl + 'task/create', payload);
+    return this.http.post(this.baseUrl + 'task/', payload);
   }
 
 
@@ -45,7 +45,7 @@ export class ApiService {
         priority: formVal.priority
     };
     console.log(payload);
-    return this.http.put(this.baseUrl + 'task/edit/'+taskId, payload);
+    return this.http.put(this.baseUrl + 'task/'+taskId, payload);
   }
 
   getParentTasks() {
@@ -58,7 +58,7 @@ export class ApiService {
   }
 
   deleteTask(taskId) {
-    return this.http.delete(this.baseUrl + 'task/delete/' + taskId);
+    return this.http.delete(this.baseUrl + 'task/' + taskId);
   }
 
   getEditTask() {
