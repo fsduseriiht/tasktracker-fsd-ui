@@ -496,7 +496,7 @@ var ApiService = /** @class */ (function () {
             endDate: new Date(formVal.edate).toISOString(),
             priority: formVal.priority
         };
-        return this.http.post(this.baseUrl + 'task/create', payload);
+        return this.http.post(this.baseUrl + 'task/', payload);
     };
     /******* Service Call To Update Existing Task Details *******/
     ApiService.prototype.updateTask = function (form, taskId) {
@@ -510,7 +510,7 @@ var ApiService = /** @class */ (function () {
             priority: formVal.priority
         };
         console.log(payload);
-        return this.http.put(this.baseUrl + 'task/edit/' + taskId, payload);
+        return this.http.put(this.baseUrl + 'task/' + taskId, payload);
     };
     ApiService.prototype.getParentTasks = function () {
         return this.http.get(this.baseUrl + 'parent/list').map(function (res) { return res.json(); });
@@ -520,7 +520,7 @@ var ApiService = /** @class */ (function () {
         return this.allTasks$;
     };
     ApiService.prototype.deleteTask = function (taskId) {
-        return this.http.delete(this.baseUrl + 'task/delete/' + taskId);
+        return this.http.delete(this.baseUrl + 'task/' + taskId);
     };
     ApiService.prototype.getEditTask = function () {
         return {
